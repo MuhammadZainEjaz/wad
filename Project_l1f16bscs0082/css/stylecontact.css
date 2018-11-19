@@ -1,0 +1,59 @@
+#main {
+    /* add CmeSS here */
+    margin:0;
+    padding:0;
+    background-size:cover;
+
+}
+.text-center {
+
+    FONT-STYLE: italic;
+    text-align: center;
+    font-size: 25px;
+    color: #6a6bff;
+
+}
+.text
+{
+    text-align: center;
+}
+
+.resetbox
+{
+    position:absolute;
+    top:85%;
+    left:80%;
+    transform:translate(-60%, -60%);
+    width:400px;
+    height:700px;
+    padding:80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+
+}
+
+.resetbox input[type="text"],.resetBox input[type="txt"],.resetBox input[type="text"]
+{
+    border: none;
+    outline:none;
+    height:40px;
+    color:White;
+    font-size: 18px;
+    border-radius: 10px;
+
+}
+.resetbox button
+{
+    size: 20px;
+    color: #6a6bff;
+    padding:20px 10px;
+    border-radius: 50px;
+
+}
+
+.image
+{
+    padding:20px 10px;
+    border-radius: 50px;
+}
