@@ -94,15 +94,6 @@
                     <?php
                         get_brands();
                     ?>
-                    <li>
-                        <a class="nav-link" href="#">Sony</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Dell</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Toshiba</a>
-                    </li>
                 </ul>
             </li>
             <li>
