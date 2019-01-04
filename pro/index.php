@@ -92,7 +92,7 @@
                 </a>
                 <ul class="collapse show list-unstyled" id="pageSubmenu">
                     <?php
-                        get_brands();
+                        get_brands(0);
                     ?>
                 </ul>
             </li>
