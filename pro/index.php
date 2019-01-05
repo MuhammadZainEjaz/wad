@@ -114,7 +114,9 @@
 
         <div class="row">
             <div class="col">
-                Content
+                <?php
+                    show_data_on_content_page();
+                ?>
             </div>
         </div>
     </article>
