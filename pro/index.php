@@ -1,11 +1,7 @@
-<?php 
-    require "server/functions.php";
-?>
-
-
-
-
 <!DOCTYPE html>
+<?php
+require "server/functions.php";
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +11,23 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
+    <script>
+
+
+        function checkmail(str) {
+            //console.log(str);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("hint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "check_email.php?e=" + str, true);
+            xmlhttp.send();
+
+        }
+    </script>
+
 </head>
 <body>
 
@@ -22,7 +35,7 @@
     <div class="row">
         <div class="col-12 no-padding">
             <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
-                <a class="navbar-brand" href="index.html"><img src="media/logo.png" width="175" height="50" alt="logo">
+                <a class="navbar-brand" href="index.php"><img src="media/logo.png" width="175" height="50" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button"
                         data-toggle="collapse"
@@ -33,11 +46,12 @@
                     <div class="col-lg-8 offset-lg-1 col-md-8 col-sm-7">
                         <form class="form-inline">
                             <div class="input-group">
-                                <input type="search" class="form-control"
+                                <input type="search" class="form-control" onkeyup="checkmail(this.value)"
                                        id="search-bar" name="search"
                                        placeholder="Find Mobile Phones, Laptops, and more..">
+
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary btn-lg" type="button"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-outline-secondary btn-lg" type="submit"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -71,18 +85,7 @@
                     Categories
                 </a>
                 <ul class="collapse show list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a class="nav-link"  href="#">Laptops</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Computers</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Mobiles</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Tablets</a>
-                    </li>
+                    <?php getCats(); ?>
                 </ul>
             </li>
             <li class="active">
@@ -91,9 +94,7 @@
                     Brands
                 </a>
                 <ul class="collapse show list-unstyled" id="pageSubmenu">
-                    <?php
-                        get_brands(0);
-                    ?>
+                    <?php getBrands(); ?>
                 </ul>
             </li>
             <li>
@@ -112,16 +113,13 @@
     </nav>
     <article id="content" class="container-fluid bg-white">
 
-        <div class="row">
-            <div class="col">
-                <?php
-                    show_data_on_content_page();
-                ?>
-            </div>
+        <div class="row" id="hint">
+                <?php getPro(); ?>
         </div>
+
     </article>
 
-
+zx
 </div>
 <footer class="container-fluid">
         <div class="row">
